@@ -1,0 +1,36 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node build/index.js",
+    "start-dev": "nodemon --exec babel-node src/index.js",
+    "clean": "rimraf build",
+    "build": "babel src --out-dir build",
+    "deploy": "npm run clean && npm run build && gcloud app deploy --project smart-ranspo"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.1",
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "nodemon": "^1.18.10"
+  },
+  "description": "",
+  "dependencies": {
+    "@babel/polyfill": "^7.4.0",
+    "apollo-server": "^2.4.0",
+    "apollo-server-express": "^2.4.8",
+    "express": "^4.16.4",
+    "graphql": "^14.1.1",
+    "json2csv": "^4.4.1",
+    "jsonwebtoken": "^8.4.0",
+    "merge-graphql-schemas": "^1.5.8",
+    "mongoose": "^5.4.10"
+  }
+}
